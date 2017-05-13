@@ -45,7 +45,17 @@
   }
   .navbar-brand{
     height: initial;
+    width: 100%;
+    padding-top: 4rem;
+    img{
+      max-width: 250px;
+      margin: 0 auto;
+    }
   }
+}
+
+.img-headerSanCarlos{
+  max-width: 6rem;
 }
 
 .sizeIndex {
@@ -121,7 +131,7 @@ nav .navbar-nav li {
 }
 
 nav .navbar-nav li a {
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-transform: uppercase;
 }
 
