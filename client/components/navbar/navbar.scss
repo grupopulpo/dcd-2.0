@@ -1,11 +1,52 @@
-.navbar-default{
-  
+.navbar-default {
   border-color: transparent;
   background-color: transparent;
-.navbar-toggle .icon-bar {
-  width: 28px;
-  background-color: rgba(228, 70, 80, 0.6);
-  transition: .5s ease;
+  .navbar-toggle .icon-bar {
+    width: 28px;
+    background-color: rgba(228, 70, 80, 0.6);
+    transition: .5s ease;
+  }
+  .navbar-toggle.collapsed .icon-bar:nth-child(2) {
+    transform: rotate(0)translateY(0)translateX(0);
+  }
+  .navbar-toggle.collapsed .icon-bar:nth-child(3) {
+    opacity: 1
+  }
+  .navbar-toggle.collapsed .icon-bar:nth-child(4) {
+    transform: rotate(0)translateY(0)translateX(0);
+  }
+  .navbar-toggle .icon-bar:nth-child(2) {
+    transform: rotate(-45deg)translateY(5px)translateX(-5px);
+  }
+  .navbar-toggle .icon-bar:nth-child(3) {
+    opacity: 0
+  }
+  .navbar-toggle .icon-bar:nth-child(4) {
+    transform: rotate(45deg)translateY(-4px)translateX(-3px);
+  }
+  .navbar-toggle {
+    position: absolute;
+    right: 0;
+    border-color: transparent;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+  }
+  .navbar-collapse {
+    border: none;
+  }
+  .navbar-nav>li>a {
+    color: $color-verde;
+  }
+  .navbar-nav>.active>a,
+  .navbar-nav>.active>a:focus,
+  .navbar-nav>.active>a:hover {
+    color: rgba(228, 70, 80, 0.6);
+    background-color: white;
+  }
+}
+
+.sizeIndex {
+  font-size: 45px;
 }
 
 .navbar-toggle.collapsed .icon-bar:nth-child(2) {
@@ -28,57 +69,6 @@
   opacity: 0
 }
 
-.navbar-toggle .icon-bar:nth-child(4) {
-  transform: rotate(45deg)translateY(-4px)translateX(-3px);
-}
-.navbar-toggle {
-  position: absolute;
-  right: 0;
-  border-color: transparent;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-}
-
-.navbar-collapse {
-  border: none;
-}
-.navbar-nav>li>a {
-  color: $color-verde;
-}
-
-.navbar-nav>.active>a,
-.navbar-nav>.active>a:focus,
-.navbar-nav>.active>a:hover {
-  color: rgba(228, 70, 80, 0.6);
-  background-color: white;
-}
-}
-
-
-
-.sizeIndex {
-  font-size: 45px!important;
-}
-
-.sizeRule {
-  font-size: 25px!important;
-}
-
-.sizeMenu {
-  font-size: 35px!important;
-}
-.navbar-brand{
-    width: 100%;
-}
-.listFooter {
-  margin-right: 25px!important;
-}
-
-.navMobil {
-  display: none!important;
-  height: 110px;
-}
-
 .ntop {
   .social {
     .fa {
@@ -87,24 +77,22 @@
   }
 }
 
-
-.img-headerSanCarlos{
-  padding: 0 0.3em 0.3em 0.3em;
+.navbar-collapse {
+  border: none;
 }
 
+.navbar-nav>li>a {
+  color: $color-verde;
+}
 
 .navColor {
   background: rgba(228, 70, 80, 0.6);
 }
 
-.navbar-default 
-
-.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover {
   background-color: transparent;
 }
-
-
 
 .navMobil {
   display: block;
@@ -116,8 +104,6 @@
 .mainav {
   display: none;
 }
-
-
 
 nav .navbar-nav {
   display: flex;
