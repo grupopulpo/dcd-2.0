@@ -29,28 +29,16 @@
   color: #DF464F!important;
   background-color: #FFFFFF!important;
 }
-
 .navbar-toggle {
   position: absolute;
   right: 0;
 }
 
-@media(max-width:767px) {
-  .hidden-xs {
-    display: none;
-  }
-}
-
-@media(min-width:768px) {
-  .hidden-md {
-    display: none;
-  }
+.img-headerSanCarlos{
+  padding: 0 0.3em 0.3em 0.3em;
 }
 
 @media(max-width: 720px) {
-  .hidden-xs {
-    display: none;
-  }
   .navbar-default {
     border-color: transparent!important;
   }
@@ -108,9 +96,6 @@
   }
   .navColor {
     background: rgba(255, 3, 3, 0.7) !important;
-  }
-  .navbar {
-    margin-top: -25px!important;
   }
 }
 
