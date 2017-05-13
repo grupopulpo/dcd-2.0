@@ -1,0 +1,125 @@
+.fontBeba {
+  font-family: 'bebas_neueregular'!important;
+}
+
+.sizeIndex {
+  font-size: 45px!important;
+}
+
+.sizeRule {
+  font-size: 25px!important;
+}
+
+.sizeMenu {
+  font-size: 35px!important;
+}
+.navbar-brand{
+    width: 100%;
+}
+.listFooter {
+  margin-right: 25px!important;
+}
+
+.navMobil {
+  display: none!important;
+  height: 110px;
+}
+
+.social {
+  color: #DF464F!important;
+  background-color: #FFFFFF!important;
+}
+
+.navbar-toggle {
+  position: absolute;
+  right: 0;
+}
+
+@media(max-width:767px) {
+  .hidden-xs {
+    display: none;
+  }
+}
+
+@media(min-width:768px) {
+  .hidden-md {
+    display: none;
+  }
+}
+
+@media(max-width: 720px) {
+  .hidden-xs {
+    display: none;
+  }
+  .navbar-default {
+    border-color: transparent!important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent!important;
+  }
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: rgba(228, 70, 80, 0.6)!important;
+  }
+  .navColor {
+    background: rgba(228, 70, 80, 0.6)!important;
+  }
+  .navbar-default .navbar-nav>li>a {
+    color: white!important;
+  }
+  .navbar-default .navbar-toggle:focus,
+  .navbar-default .navbar-toggle:hover {
+    background-color: transparent!important;
+  }
+  .navbar-default .navbar-nav>.active>a,
+  .navbar-default .navbar-nav>.active>a:focus,
+  .navbar-default .navbar-nav>.active>a:hover {
+    color: rgba(228, 70, 80, 0.6)!important;
+    background-color: white!important;
+  }
+  .navMobil {
+    display: block!important;
+    background: transparent!important;
+    color: white;
+    text-align: center;
+  }
+  .mainav {
+    display: none!important;
+  }
+  .navbar-collapse.navbar-ex1-collapse.navColor.collapse {
+    position: absolute;
+    z-index: 10;
+    top: 128px;
+    width: 100%;
+    padding: 1.8rem 0;
+  }
+  nav .navbar-nav {
+    display: flex;
+    margin-bottom: 128px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  nav .navbar-nav li {
+    width: 100%;
+    margin: .3rem 0;
+  }
+  nav .navbar-nav li a {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+  .navColor {
+    background: rgba(255, 3, 3, 0.7) !important;
+  }
+  .navbar {
+    margin-top: -25px!important;
+  }
+}
+
+@media only screen and (min-width: 320px) {
+  .img-logo {
+    width: 120px;
+    height: auto;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+ 
+}
