@@ -32,12 +32,15 @@ $color-verde: #63ad9c;
 .back-rojo{
   background: $color-rojo;
   color: white;
+   font-family: bebas_neueregular!important;
 }
 
 .boton-galeria{
   background:$color-amarillo;
-  color: $color-rojo; 
+  color: $color-rojo;
+  font-family: bebas_neueregular!important; 
   padding-top: 10px;
+  font-size: 2.3em;
   padding-bottom: 10px;
   padding-left: 20px;
   padding-right: 20px;
