@@ -1,9 +1,16 @@
 
-<div class="container-fluid">
-  
-<div class="row">
-  <div class="col-xs-3 ">
-    <img src="assets/images/sancarlos.png" class="img-headerSanCarlos">
+  <div class="row">
+    <div class="col-xs-3 ">
+      <img src="assets/images/sancarlos.png" class="img-headerSanCarlos">
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-3 pull-right text-right">
+      <ul class="faico clear ntop">
+        <li><a class="social faicon-facebook" href="https://www.facebook.com/AzucarSanCarlos"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+        <li><a class="social faicon-instagram" href="https://www.instagram.com/azucarsancarlos/"><i class="fa fa-instagram fa-lg"></i></a></li>
+        <li><a class="social faicon-twitter" href="https://twitter.com/AzucarSanCarlos"><i class="fa fa-twitter fa-lg"></i></a></li>
+        <li><a class="social faicon-youtube" href="https://www.youtube.com/user/AzucarSanCarlos"><i class="fa fa-youtube-play fa-lg"></i></a></li>
+      </ul>
+    </div>
   </div>
   <div class="col-xs-6 col-sm-4 col-md-3 pull-right">
     <ul class="faico clear">
@@ -34,7 +41,7 @@
     </div>
     <div uib-collapse="$ctrl.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
       <ul class="nav navbar-nav">
-        <li ng-repeat="item in $ctrl.menu" class="fontBeba sizeMenu" ui-sref-active="active">
+        <li ng-repeat="item in $ctrl.menu" class="font-familiy-bebas sizeMenu" ui-sref-active="active">
           <a ui-sref="{{item.state}}">{{item.title}}</a>
         </li>
       </ul>
