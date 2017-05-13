@@ -7,6 +7,8 @@ $color-turquesa: #00d0d2;
 $color-rojo: #e24650;
 $color-amarillo: #ffc801;
 $color-verde: #63ad9c;
+$min_width: 320px;
+$max_width: 1200px;
 // @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,900|Roboto:300,500,700,900);
 
 /**
@@ -110,6 +112,34 @@ $color-verde: #63ad9c;
 .font-familiy-bebas {
   font-family: bebas_neueregular!important;
 }
+
+
+
+/* mixins and functions */
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
 
 // Component styles are injected through gulp
 

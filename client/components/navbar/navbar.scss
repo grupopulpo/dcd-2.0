@@ -36,6 +36,7 @@
   }
   .navbar-nav>li>a {
     color: $color-verde;
+    @include fluid-type($min_width, $max_width, 18px, 32px);
   }
   .navbar-nav>.active>a,
   .navbar-nav>.active>a:focus,
@@ -43,18 +44,18 @@
     color: rgba(228, 70, 80, 0.6);
     background-color: white;
   }
-  .navbar-brand{
+  .navbar-brand {
     height: initial;
     width: 100%;
     padding-top: 4rem;
-    img{
+    img {
       max-width: 250px;
       margin: 0 auto;
     }
   }
 }
 
-.img-headerSanCarlos{
+.img-headerSanCarlos {
   max-width: 6rem;
 }
 
@@ -131,7 +132,6 @@ nav .navbar-nav li {
 }
 
 nav .navbar-nav li a {
-  font-size: 2rem;
   text-transform: uppercase;
 }
 
