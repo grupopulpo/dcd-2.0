@@ -4,12 +4,45 @@ $icon-font-path: '/assets/fonts/bootstrap/';
 $fa-font-path: '/assets/fonts/font-awesome/';
 @import '~font-awesome/scss/font-awesome';
 
+$color-turquesa: #00d0d2;
+$color-rojo: #e24650;
+$color-amarillo: #ffc801;
+$color-verde: #63ad9c;
 // @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,900|Roboto:300,500,700,900);
 
 /**
  * App-wide Styles
  */
 
+.row{
+  position: relative;
+ }
+.vertical-center{
+    position: absolute;
+    right: 1em;
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.back-turquesa{
+  background: $color-turquesa;
+  color: white;
+  font-family: bebas_neueregular!important;
+}
+.back-rojo{
+  background: $color-rojo;
+  color: white;
+}
+
+.boton-galeria{
+  background:$color-amarillo;
+  color: $color-rojo; 
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 15px;
+}
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -68,7 +101,8 @@ $fa-font-path: '/assets/fonts/font-awesome/';
 }
 
 .faicon-facebook:hover {
-  color: #DF464F;
+  color: #DF464F
+  
 }
 
 .faicon-twitter-plus:hover {
@@ -82,6 +116,12 @@ $fa-font-path: '/assets/fonts/font-awesome/';
 .faicon-twitter:hover {
   color: #DF464F;
 }
+
+.font-familiy-bebas{
+  font-family: bebas_neueregular!important;
+}
+
+
 
 // Component styles are injected through gulp
 /* inject:scss */

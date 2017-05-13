@@ -2,6 +2,20 @@
   margin: 20px 0;
 }
 
+.main_h2{
+  text-align: center;
+  font-size: 5em;
+}
+
+.main_h1{
+  text-align: center;
+  font-size: 6em;
+}
+
+.vertical-center{
+  text-align: center;
+}
+
 #banner {
   border-bottom: none;
   margin-top: -20px;
@@ -21,7 +35,19 @@
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
   background: #4393B9;
 }
+.faico a {
+    display: inline-block;
+    padding: 1em;
+    text-align: center;
+}
 
+
+.fa {
+  color: #fff;
+}
+.social {
+      background-color:transparent !important;
+}
 .navbar-text {
   margin-left: 15px;
 }
