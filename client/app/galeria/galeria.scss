@@ -1,0 +1,11 @@
+galeria {
+  .row{
+  h3 {
+    margin-top: 2em;
+    @extend .fbebas;
+    color: $color-verde;
+    @include fluid-type($min_width, $max_width, 28px, 38px);
+  }
+  padding-bottom: 2em;
+  }
+}

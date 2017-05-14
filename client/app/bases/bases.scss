@@ -1,0 +1,15 @@
+bases {
+  .row {
+    background-color: $color-amarillo;
+    h3 {
+      @extend .fbebas;
+      color: $color-rojo;
+      @include fluid-type($min_width,$max_width,28px,38px);
+    }
+    p {
+      @extend .favenir;
+      color: #606060;
+      @include fluid-type($min_width,$max_width,18px,23px);
+    }
+  }
+}

@@ -11,6 +11,53 @@ $min_width: 320px;
 $max_width: 1200px;
 // @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,900|Roboto:300,500,700,900);
 
+/* 
+ * mixins and functions 
+ */
+
+@function strip-unit($value) {
+  @return $value / ($value * 0+1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+  @if $u1==$u2 and $u1==$u3 and $u1==$u4 {
+    & {
+      font-size: $min-font-size;
+      line-height: $min-font-size*0.9;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+        line-height: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})* 0.9);
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+        line-height: $max-font-size*0.9;
+      }
+    }
+  }
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  >.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+
 /**
  * App-wide Styles
  */
@@ -24,6 +71,13 @@ $max_width: 1200px;
   right: 0em;
   transform: translateY(0%);
   top: 0%;
+}
+
+.vertical-center-alt{
+  position: absolute;
+    right: 1em;
+    transform: translateY(-50%);
+    top: 50%;
 }
 
 .img-center {
@@ -41,8 +95,9 @@ $max_width: 1200px;
 
 .yt-cnt {
   @extend .yt;
+  @include aspect-ratio(16, 9);
   iframe {
-    height: 56.25%;
+    height: 100%;
   }
 }
 
@@ -75,7 +130,16 @@ $max_width: 1200px;
 }
 
 
-/* Fonts */
+/* 
+ * Fonts 
+ */
+
+@font-face {
+  font-family: 'Avenir-Black';
+  src: url('../assets/fonts/sc-dd/Avenir-Black.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/sc-dd/Avenir-Black.woff') format('woff'), url('../assets/fonts/sc-dd/Avenir-Black.ttf') format('truetype'), url('../assets/fonts/sc-dd/Avenir-Black.svg#Avenir-Black') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
   font-family: 'bebas_neueregular';
@@ -91,12 +155,18 @@ $max_width: 1200px;
   font-style: normal;
 }
 
-.font-familiy-bebas {
+.favenir {
+  font-family: 'Avenir-Black';
+}
+
+.fbebas {
   font-family: bebas_neueregular;
 }
 
 
-/* Social icons */
+/* 
+ * Social icons 
+ */
 
 .faico {
   margin: 0;
@@ -123,54 +193,6 @@ $max_width: 1200px;
 
 .faico a {
   color: #1C7AA8;
-}
-
-
-
-
-/* mixins and functions */
-
-@function strip-unit($value) {
-  @return $value / ($value * 0+1);
-}
-
-@mixin fluid-type($min-vw,
-$max-vw,
-$min-font-size,
-$max-font-size) {
-  $u1: unit($min-vw);
-  $u2: unit($max-vw);
-  $u3: unit($min-font-size);
-  $u4: unit($max-font-size);
-  @if $u1==$u2 and $u1==$u3 and $u1==$u4 {
-    & {
-      font-size: $min-font-size;
-      @media screen and (min-width: $min-vw) {
-        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-      }
-      @media screen and (min-width: $max-vw) {
-        font-size: $max-font-size;
-      }
-    }
-  }
-}
-
-@mixin aspect-ratio($width,
-$height) {
-  position: relative;
-  &:before {
-    display: block;
-    content: "";
-    width: 100%;
-    padding-top: ($height / $width) * 100%;
-  }
-  >.content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
 }
 
 // Component styles are injected through gulp

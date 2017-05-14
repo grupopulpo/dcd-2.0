@@ -35,6 +35,7 @@
     border: none;
   }
   .navbar-nav>li>a {
+    @extend .fbebas;
     color: $color-verde;
     @include fluid-type($min_width, $max_width, 18px, 32px);
   }
@@ -59,9 +60,6 @@
   max-width: 70px;
 }
 
-.sizeIndex {
-  font-size: 45px;
-}
 
 .navbar-toggle.collapsed .icon-bar:nth-child(2) {
   transform: rotate(0)translateY(0)translateX(0);
