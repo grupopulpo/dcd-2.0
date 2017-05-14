@@ -12,9 +12,7 @@ import uiRouter from 'angular-ui-router';
 import uiBootstrap from 'angular-ui-bootstrap';
 import 'angular-validation-match';
 
-import {
-  routeConfig
-} from './app.config';
+import {routeConfig} from './app.config';
 
 import _Auth from '../components/auth/auth.module';
 import account from './account';
@@ -25,30 +23,51 @@ import main from './main/main.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
+import BasesComponent from './bases/bases.component';
+import GaleriaComponent from './galeria/galeria.component';
+import PremiosComponent from './premios/premios.component';
 
 import './app.scss';
 
-angular.module('dcd20App', [ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter,
-  uiBootstrap, _Auth, account, admin, 'validation.match', navbar, footer, main, constants,
-  socket, util
+angular
+  .module('dcd20App', [
+  ngCookies,
+  ngResource,
+  ngSanitize,
+  'btford.socket-io',
+  uiRouter,
+  uiBootstrap,
+  _Auth,
+  account,
+  admin,
+  'validation.match',
+  navbar,
+  footer,
+  main,
+  BasesComponent,
+  PremiosComponent,
+  GaleriaComponent,
+  constants,
+  socket,
+  util
 ])
   .config(routeConfig)
-  .run(function($rootScope, $location, Auth) {
+  .run(function ($rootScope, $location, Auth) {
     'ngInject';
     // Redirect to login if route requires auth and you're not logged in
 
-    $rootScope.$on('$stateChangeStart', function(event, next) {
-      Auth.isLoggedIn(function(loggedIn) {
-        if(next.authenticate && !loggedIn) {
-          $location.path('/login');
-        }
-      });
+    $rootScope.$on('$stateChangeStart', function (event, next) {
+      Auth
+        .isLoggedIn(function (loggedIn) {
+          if (next.authenticate && !loggedIn) {
+            $location.path('/login');
+          }
+        });
     });
   });
 
-angular.element(document)
+angular
+  .element(document)
   .ready(() => {
-    angular.bootstrap(document, ['dcd20App'], {
-      strictDi: true
-    });
+    angular.bootstrap(document, ['dcd20App'], {strictDi: true});
   });
