@@ -6,19 +6,19 @@ import angular from 'angular';
 export class NavbarComponent {
   menu = [{
       title: 'Home',
-      state: 'main'
+      state: '#main'
     },
     {
       title: 'REGLAS DEL CONCURSO',
-      state: 'bases'
+      state: '#bases'
     },
     {
       title: 'GALERÍA',
-      state: 'galeria'
+      state: '#galeria'
     },
     {
       title: 'PREMIOS',
-      state: 'premios'
+      state: '#premios'
     }
   ];
 

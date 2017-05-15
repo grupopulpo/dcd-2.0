@@ -60,7 +60,7 @@ angular
       Auth
         .isLoggedIn(function (loggedIn) {
           if (next.authenticate && !loggedIn) {
-            $location.path('/#popup');
+            $location.path('/');
           }
         });
     });
