@@ -3,16 +3,16 @@ premios {
     @extend .fbebas;
     background-color: $color-turquesa;
     h1 {
-      @include fluid-type($min_width, $max_width, 68px, 122px);
+      @include fluid-type($min_width, $max_width, 58px, 102px);
       color: white;
       span {
-      @include fluid-type($min_width, $max_width, 68px, 102px);
+      @include fluid-type($min_width, $max_width, 58px, 92px);
         color: $color-rojo;
       }
     }
     h3 {
       color: #606060;
-      @include fluid-type($min_width, $max_width, 28px, 37px);
+      @include fluid-type($min_width, $max_width, 25px, 33px);
     }
   }
 }

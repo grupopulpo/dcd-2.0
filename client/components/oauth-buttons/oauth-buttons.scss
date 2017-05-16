@@ -1,1 +1,17 @@
+.titlePop {
+  margin-bottom: 1em;
+}
 
+.btn-social {
+  @extend .fbebas;
+  text-align: center;
+  border-radius: 50000px;
+  padding-left: 12px;
+  span {
+    @include fluid-type($min_width, $max_width, 18px, 24px);
+  }
+  >:first-child {
+    border: none;
+    position: relative;
+  }
+}

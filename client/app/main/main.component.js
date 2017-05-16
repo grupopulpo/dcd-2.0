@@ -7,14 +7,14 @@ import routes from './main.routes';
 
 export class MainComponent {
   /*@ngInject*/
-  constructor($uibModal, Auth) {
+  constructor(Auth, $uibModal) {
+    'ngInject';
     this.uibModal = $uibModal;
     this.isLoggedIn = Auth.isLoggedInSync;
   }
 
   $onInit() {
-    if (this.isLoggedIn) {
-      console.log("no");
+    if (!this.isLoggedIn()) {
       this.mmodal = this
         .uibModal
         .open({
@@ -22,9 +22,6 @@ export class MainComponent {
               "   <oauth-buttons classes='btn-block'></oauth-buttons>    <a class='popup-cerrar" +
               "' href='#' ng-click='$dismiss()'>X</a>  </div>"
         });
-    }
-    else{
-      console.log("si");
     }
   }
 }
